@@ -9,7 +9,7 @@ import numpy as np
 
 import ray.tune.integration.wandb as wandb_tune
 
-from ray.rllib.agents.ppo import PPOTrainer
+from ray.rllib.algorithms.ppo import PPO as PPOTrainer
 
 from CustomCallbacks import *
 from models import *
