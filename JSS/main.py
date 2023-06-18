@@ -17,7 +17,7 @@ from models import *
 from typing import Dict, Tuple
 
 import multiprocessing as mp
-from ray.rllib.agents import with_common_config
+from ray.rllib.algorithms.algorithm import with_common_config
 from ray.rllib.models import ModelCatalog
 
 from ray.tune.utils import flatten_dict
