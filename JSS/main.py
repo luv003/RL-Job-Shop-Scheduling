@@ -11,6 +11,10 @@ import ray.tune.integration.wandb as wandb_tune
 
 from ray.rllib.algorithms.ppo import PPO as PPOTrainer
 
+#if use a2c or a3c
+from ray.rllib.algorithms.a2c import A2C as A2CTrainer
+from ray.rllib.algorithms.a3c import A3C as A3CTrainer
+
 from CustomCallbacks import *
 from models import *
 
@@ -146,6 +150,8 @@ def train_func():
 
     start_time = time.time()
     trainer = PPOTrainer(config=config)
+    #trainer=A2CTrainer(config=config)
+    #trainer=A3CTrainer(config=config)
     while start_time + stop['time_total_s'] > time.time():
         result = trainer.train()
         result = wandb_tune._clean_log(result)
